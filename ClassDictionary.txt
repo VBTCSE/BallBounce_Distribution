@@ -2,9 +2,36 @@ Class: Program
 
 Fields:
 
-Name		Type		Access		Purpose
--------------------------------------------------------
-bRunning	static bool	public		Flag, when true, means that the ball simulation is running, 
-						ball is moving.  When false, means ball is stopped.
+Name			Type			Access		Purpose
+-----------------------------------------------------------------------
+bRunning		static bool		public		Flag, when true, means that the ball simulation is running, 
+								ball is moving.  When false, means ball is stopped.
 
-dSpeed		
+dSpeed			static double		public		Value of the speed of the ball.  This is shown in the UI.
+
+hitCount		static int		public		Count of the number of times that the ball hits the 
+								bottom of the room.
+
+dtotalMilliseconds	static double		public		Elapsed time, in units of milliseconds.  
+								This is the time displayed on the UI.
+
+_fastLoop		static FastLoop		private		FastLoop object.  The creation of this object initiates the running
+								of the game loop.
+
+stateSystem		static StateSystem	private		StateSystem object.  This is used to manage the state of the simulator, 
+								between the Run state and the Stop state.
+
+
+Methods:
+
+Name			Type			Access		Purpose
+-----------------------------------------------------------------------
+Main			static void		private		The main method of the program.  Execution starts here.
+
+GameLoop		static void		private		This method is executed in each loop cycle by the App Idle event handler 
+								and first calls the StateSystem's Update method, then calls 
+								its Render method.
+
+
+
+Class: 
