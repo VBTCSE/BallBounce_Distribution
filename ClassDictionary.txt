@@ -1,4 +1,11 @@
+=============================================================================================================================
+=============================================================================================================================
+=============================================================================================================================
+
+
 Class: Program
+
+
 
 Fields:
 
@@ -33,5 +40,42 @@ GameLoop		static void		private		This method is executed in each loop cycle by th
 								its Render method.
 
 
+=============================================================================================================================
+=============================================================================================================================
+=============================================================================================================================
 
-Class: 
+
+Class: FastLoop
+
+
+
+Fields:
+
+Name			Type			Access		Purpose
+-----------------------------------------------------------------------
+_callback		LoopCallback		private		This is a function reference to the delegate that is executed by
+								the game loop, through the App Idle event handler.
+
+_timer			PreciseTimer		private		This is the PreciseTimer object that returns the amount of time 
+								that has passed during system operation.
+
+
+Methods:
+
+Name			Type			Access		Purpose
+-----------------------------------------------------------------------
+FastLoop					public		Class constructor
+
+OnApplicationEnterIdle	void			private		Event handler for application idle event.  This handler is 
+								run each time the app is idle.  It is used to call the 
+								game loop callback function.
+
+IsAppStillIdle		bool			private		Tests whether the app is idle at the time this method is called.
+
+
+=============================================================================================================================
+=============================================================================================================================
+=============================================================================================================================
+
+
+
