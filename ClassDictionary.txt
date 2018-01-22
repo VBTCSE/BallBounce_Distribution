@@ -1,0 +1,10 @@
+Class: Program
+
+Fields:
+
+Name		Type		Access		Purpose
+-------------------------------------------------------
+bRunning	static bool	public		Flag, when true, means that the ball simulation is running, 
+						ball is moving.  When false, means ball is stopped.
+
+dSpeed		
